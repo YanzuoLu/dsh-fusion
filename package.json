@@ -1,0 +1,23 @@
+{
+  "name": "dsh-fusion",
+  "version": "0.1.0",
+  "description": "Optional lead/worker instruction mode using native DSH runtime-context snapshots",
+  "type": "module",
+  "main": "bootstrap.js",
+  "exports": { ".": "./bootstrap.js", "./client": "./lib/client.js", "./package.json": "./package.json" },
+  "files": ["bootstrap.js", "release.json", "dist", "lib/client.js", "prompts", "cordis.patch.yml"],
+  "scripts": { "build": "node scripts/build.mjs" },
+  "license": "MIT",
+  "author": "Yanzuo Lu",
+  "repository": { "type": "git", "url": "https://github.com/YanzuoLu/dsh-fusion.git" },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": { "platform": "web", "inject": ["@deepseek-ai/dsh-client-ui-conversation"] }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-storage-domain": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-system-prompt": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-agent": "0.2.0-rc.2",
+    "zod": "^4.0.0"
+  }
+}
