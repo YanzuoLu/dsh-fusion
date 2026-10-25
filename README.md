@@ -16,7 +16,7 @@ Every ordinary session starts Off unless it has a saved preference. Turning it o
 
 Subagents, including nested children, follow their root main session dynamically. Switching main Off removes the worker contribution on each child's next model-request assembly, including after resume. Switching On also affects already-created children. Already assembled or in-flight requests are not canceled or rewritten. No special first-turn or resume injection is needed.
 
-Only ordinary-session preferences are stored. Side chats and ordinary forks are ordinary sessions with independent switches, Off by default. A `parentSession` relationship alone does not make a session a worker. The subagent view does not expose a writable switch; change the setting in its main session.
+Only ordinary-session preferences are stored. Side chats and ordinary forks are ordinary sessions with independent switches. With the current dsh-side-chat plugin, a new side chat copies its main session's saved Fusion switch once at creation, then remains independently editable. Existing side chats are not reset, and ordinary forks still default Off. A `parentSession` relationship alone does not make a session a worker. The subagent view does not expose a writable switch; change the setting in its main session.
 
 ## Native context mechanism
 
